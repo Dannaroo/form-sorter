@@ -1,0 +1,14 @@
+main {
+  /* display: flex; */
+}
+
+.basin {
+  /* display: flex; */
+  background-color: red;
+}
+
+div {
+  margin: 5px;
+  padding: 5px;
+  border: solid 2px black;
+}
