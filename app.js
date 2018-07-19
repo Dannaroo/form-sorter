@@ -25,3 +25,31 @@ $('#numBnt').on('click', function () {
     );
   });
 });
+
+//Search form
+let search = document.getElementById('search');
+const submitButton = document.querySelector('.submit');
+const list = document.querySelectorAll('.bin h1');
+const clearButton = document.querySelector('#clear');
+
+submitButton.addEventListener('click', () => {
+  for (i = 0; i < list.length; i += 1) {
+    let title = list[i].innerHTML;
+
+    if (search.value.toLowerCase() !== title.toLowerCase()) {
+      list[i].parentNode.style.display="none";
+    } else {
+      list[i].parentNode.style.display="block";
+    }
+  }
+  search.value = "";
+});
+
+//clear search results with #clear button
+clearButton.addEventListener('click', () => {
+  for (i = 0; i < list.length; i += 1) {
+    if (list[i].parentNode.style.display="none") {
+      list[i].parentNode.style.display="block";
+    }
+  }
+});
