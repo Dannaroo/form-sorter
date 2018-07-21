@@ -27,7 +27,7 @@ $('#numBnt').on('click', function () {
 });
 
 //Search form
-let search = document.getElementById('search');
+const search = document.getElementById('search');
 const submitButton = document.querySelector('.submit');
 const list = document.querySelectorAll('.bin h1');
 const clearButton = document.querySelector('#clear');
@@ -35,11 +35,10 @@ const clearButton = document.querySelector('#clear');
 submitButton.addEventListener('click', () => {
   for (i = 0; i < list.length; i += 1) {
     let title = list[i].innerHTML;
-
-    if (search.value.toLowerCase() !== title.toLowerCase()) {
-      list[i].parentNode.style.display="none";
-    } else {
+    if ( title.toLowerCase().includes(search.value.toLowerCase()) ) {
       list[i].parentNode.style.display="block";
+    } else {
+      list[i].parentNode.style.display="none";
     }
   }
   search.value = "";
