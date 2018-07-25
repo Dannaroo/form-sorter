@@ -8,83 +8,79 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="style.css"
-    <title>index.html</title>
+    <title>results.html</title>
   </head>
   <body>
     <nav>
-      <a href="results.html">To Results</a>
+      <a href="index.html">To Index</a>
       <button id="alphBnt">Sort Alphabetically</button>
       <button id="numBnt">Sort Numerically</button><br>
-      <input type="textarea" id="search" placeholder="Search index">
+      <input type="textarea" id="search" placeholder="Search">
       <button type='submit' class="submit">Submit</button>
       <button id="clear">Clear Search Results</button>
-      <form action="results.html">
-       <input type="text" name="resultsSearch" placeholder="Search results" />
-       <input type="submit" value="Next" />
-      </form>
     </nav>
 
     <main id="alphaOrder" class="bin">
 
 
       <div class="box">
-        <h1>Orange</h1>
+        <h1>Car</h1>
         <h5>12</h5>
       </div>
       <div class="box">
-        <h1>Banana</h1>
+        <h1>Bike</h1>
         <h5>13</h5>
       </div>
       <div class="box">
-        <h1>Pineapple</h1>
+        <h1>Motorbike</h1>
         <h5>15</h5>
       </div>
       <div class="box">
-        <h1>Apple</h1>
+        <h1>Plane</h1>
         <h5>14</h5>
       </div>
       <div class="box">
-        <h1>Berry</h1>
+        <h1>Jumbo Jet</h1>
         <h5>17</h5>
       </div>
       <div class="box">
-        <h1>Grape</h1>
+        <h1>Scooter</h1>
         <h5>16</h5>
       </div>
       <div class="box">
-        <h1>Carrot</h1>
+        <h1>Skis</h1>
         <h5>2</h5>
       </div>
       <div class="box">
-        <h1>Beachball</h1>
+        <h1>Baloon</h1>
         <h5>6</h5>
       </div>
       <div class="box">
-        <h1>Volleyball</h1>
+        <h1>Zeplin</h1>
         <h5>4</h5>
       </div>
       <div class="box">
-        <h1>Soccer</h1>
+        <h1>Scuba Gear</h1>
         <h5>7</h5>
       </div>
       <div class="box">
-        <h1>Water Polo</h1>
+        <h1>Speedboat</h1>
         <h5>10</h5>
       </div>
       <div class="box">
-        <h1>Hockey</h1>
+        <h1>Seadoo</h1>
         <h5>11</h5>
       </div>
       <div class="box">
-        <h1>Ice Hockey</h1>
+        <h1>Plow</h1>
         <h5>3</h5>
       </div>
       <div class="box">
-        <h1>Cricket</h1>
+        <h1>Space Shuttle</h1>
         <h5>9</h5>
       </div>
       <div class="box">
-        <h1>Tennis</h1>
+        <h1>Hovercraft</h1>
         <h5>8</h5>
       </div>
 
@@ -95,6 +91,10 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+    <script>
+      console.log("Hello");
+        const resultsSearch = location.search.substr(location.search.indexOf("=")+1);
+    </script>
     <script src="app.js"></script>
   </body>
 </html>

@@ -32,6 +32,20 @@ const submitButton = document.querySelector('.submit');
 const list = document.querySelectorAll('.bin h1');
 const clearButton = document.querySelector('#clear');
 
+//OFF-PAGE search. sort divs on end-page searching from start page.
+if (resultsSearch) {
+  for (i = 0; i < list.length; i += 1) {
+    let title = list[i].innerHTML;
+    if ( title.toLowerCase().includes(resultsSearch.toLowerCase()) ) {
+      list[i].parentNode.style.display="block";
+    } else {
+      list[i].parentNode.style.display="none";
+    }
+  }
+  search.value = resultsSearch;
+};
+
+//ON-PAGE search on click 'submit', sort through the divs
 submitButton.addEventListener('click', () => {
   for (i = 0; i < list.length; i += 1) {
     let title = list[i].innerHTML;
