@@ -33,6 +33,7 @@ const list = document.querySelectorAll('.bin h1');
 const clearButton = document.querySelector('#clear');
 
 //OFF-PAGE search. sort divs on end-page searching from start page.
+const resultsSearch = location.search.substr(location.search.indexOf("=")+1);
 if (resultsSearch) {
   for (i = 0; i < list.length; i += 1) {
     let title = list[i].innerHTML;
@@ -65,4 +66,63 @@ clearButton.addEventListener('click', () => {
       list[i].parentNode.style.display="block";
     }
   }
+});
+
+//Put contents of bin into an object.
+const box = document.querySelectorAll('.box')
+const product = [];
+for (let i = 0; i < list.length; i += 1) {
+  const name = box[i].querySelector('h1').innerHTML;
+  let cost = box[i].querySelector('h5').innerHTML;
+  cost = parseInt(cost);
+    product[i] = {
+        title : name,
+        smallPrice : cost,
+        mediumPrice : cost * 2,
+        largePrice : cost * 4
+
+    };
+}
+console.log(product);
+console.log(product[4]);
+
+//Make checkboxes operational
+const sizeForm = document.querySelector('#sizeForm');
+const checkboxes = sizeForm.querySelectorAll('input');
+
+sizeForm.addEventListener('click', (event) => {
+  for (i = 0; i < checkboxes.length; i += 1) {
+      checkboxes[i].setAttribute("checked", false);
+  }
+  event.target.checked = true;
+  event.target.setAttribute("checked", true);
+});
+
+const bin = document.querySelector('.bin');
+const priceCalc = document.querySelectorAll('.priceCalc');
+const small = document.querySelector('#small');
+const medium = document.querySelector('#medium');
+const large = document.querySelector('#large');
+
+//cycle through the list and append the correct price that is selected while removing click me button
+bin.addEventListener('click', (event) => {
+
+  for (let i = 0; i < product.length; i += 1) {
+    if(event.target === priceCalc[i]) {
+    const title = event.target.parentNode.firstElementChild.innerHTML;
+    if (title === product[i].title) {
+      let span = document.createElement('span');
+      if (document.querySelector('[checked=true]') === large) {
+        span.innerHTML = "Price: $" + product[i].largePrice + ".00";
+      } else if (document.querySelector('[checked=true]') === medium) {
+        span.innerHTML = "Price: $" + product[i].mediumPrice + ".00";
+      } else {
+        span.innerHTML = "Price: $" + product[i].smallPrice + ".00";
+      }
+      event.target.parentNode.appendChild(span);
+      event.target.parentNode.removeChild(event.target);
+      return;
+    }
+  }
+}
 });

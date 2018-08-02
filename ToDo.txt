@@ -1,0 +1,3 @@
+-form sizeForm - inital click outside of a checkbox goes straight to 'large'
+-reset prices button
+-results.html coming up with js error. still works though
