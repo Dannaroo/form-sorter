@@ -1,3 +1,4 @@
 -form sizeForm - inital click outside of a checkbox goes straight to 'large'
+^^^ THIS IS BREAKING THE PRICE CALCULATIONS
 -reset prices button
 -results.html coming up with js error. still works though

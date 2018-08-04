@@ -92,10 +92,14 @@ const checkboxes = sizeForm.querySelectorAll('input');
 
 sizeForm.addEventListener('click', (event) => {
   for (i = 0; i < checkboxes.length; i += 1) {
-      checkboxes[i].setAttribute("checked", false);
+    if(event.target === checkboxes[i]) {
+      for (i = 0; i < checkboxes.length; i += 1) {
+          checkboxes[i].setAttribute("checked", false);
+      }
+      event.target.checked = true;
+      event.target.setAttribute("checked", true);
+    }
   }
-  event.target.checked = true;
-  event.target.setAttribute("checked", true);
 });
 
 const bin = document.querySelector('.bin');
@@ -106,7 +110,6 @@ const large = document.querySelector('#large');
 
 //cycle through the list and append the correct price that is selected while removing click me button
 bin.addEventListener('click', (event) => {
-
   for (let i = 0; i < product.length; i += 1) {
     if(event.target === priceCalc[i]) {
     const title = event.target.parentNode.firstElementChild.innerHTML;
@@ -126,3 +129,24 @@ bin.addEventListener('click', (event) => {
   }
 }
 });
+
+//add functionality to clear prices and allow selection of new ones.
+const clearPrice = document.querySelector('#clearPrice');
+
+// clearPrice.addEventListener('click', (event) => {
+//
+//   let priceCalc = document.querySelectorAll('.priceCalc');
+//   let newPriceCalc = document.createElement('button');
+//   newPriceCalc.classList.add('priceCalc');
+//   newPriceCalc.innerHTML = "Click Me";
+//   for (let i = 0; i < box.length; i += 1) {
+//     const span = box[i].querySelector('span');
+//     const oldPriceCalc = box[i].querySelector('.priceCalc');
+//     if(span) {
+//       box[i].removeChild(span);
+//     }
+//     if(!oldPriceCalc) {
+//       box[i].appendChild(newPriceCalc);
+//     }
+//   }
+// });
